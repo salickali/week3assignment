@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body ng-app="NarrowDownApp" >
+    <div class="container" ng-controller="NarrowDownCon as one">
+        <div class="row text-center mt-4">
+            <h3 class="text-center">Narrow Down your choice</h3>
+            <div class="col-12">
+                    <div class="form-group">
+                        <input type="text" ng-model="one.searchTerm" placeholder="Search: Beef/Chicken" class="form-control">
+
+                    </div>
+
+                    <div class="form-group narrow-button">
+                        <button ng-click="one.search()" class="btn btn-secondary">Narrow Down for me</button>
+                    </div>
+            </div>
+        </div>
+
+        
+                <found-items items="one.found" on-remove="one.removeItem(index)" is-valid="one.valid"></found-items>
+          
+
+    </div>
+    
+</body>
+</html>
